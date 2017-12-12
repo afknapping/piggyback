@@ -1,0 +1,30 @@
+{
+  "name": "piggyback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "echo 'nothing to start yet...'",
+    "distribute": "npm run git-daemon & npm-offline & sleep 2s && node ./scripts/ipAndHostnameInfo.js",
+    "distribute-stop": "kill $(ps aux | grep '[n]pm-offline' | awk '{print $2}') && kill $(ps aux | grep '[g]it daemon' | awk '{print $2}')",
+    "git-daemon": "git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/",
+    "find-processes-to-kill": "ps aux | grep '[n]pm-offline' && ps aux | grep '[g]it daemon'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filtercake/piggyback.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filtercake/piggyback/issues"
+  },
+  "homepage": "https://github.com/filtercake/piggyback#readme",
+  "devDependencies": {
+    "cli-color": "^1.2.0",
+    "ip": "^1.1.5",
+    "npm-offline": "0.0.1"
+  }
+}
