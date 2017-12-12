@@ -16,5 +16,7 @@ console.log(`git pull ${os.hostname()}`)
 console.log(clc.greenBright(`npm install --registry ${ip.address()}:12644`))
 console.log(" ")
 console.log(" ")
-console.log(clc.yellowBright('finally, here are the processes you might want to kill later :)'));
+console.log("you stop the services by running")
+console.log(" ")
+console.log(clc.yellowBright('npm run distribute-stop'));
 console.log(" ")

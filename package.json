@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "echo 'nothing to start yet...'",
-    "distribute": "npm run git-daemon & npm-offline & sleep 2s && npm run distribution-guide && npm run find-processes-to-kill",
-    "distribution-guide": "node ./scripts/ipAndHostnameInfo.js",
+    "distribute": "npm run git-daemon & npm-offline & sleep 2s && node ./scripts/ipAndHostnameInfo.js",
+    "distribute-stop": "kill $(ps aux | grep '[n]pm-offline' | awk '{print $2}') && kill $(ps aux | grep '[g]it daemon' | awk '{print $2}')",
     "git-daemon": "git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/",
     "find-processes-to-kill": "ps aux | grep '[n]pm-offline' && ps aux | grep '[g]it daemon'"
   },
