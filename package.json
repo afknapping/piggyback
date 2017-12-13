@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "echo 'nothing to start yet...'",
-    "distribute": "npm run git-daemon & npm-offline & sleep 2s && node ./scripts/ipAndHostnameInfo.js",
-    "distribute-stop": "kill $(ps aux | grep '[n]pm-offline' | awk '{print $2}') && kill $(ps aux | grep '[g]it daemon' | awk '{print $2}')",
+    "distribute": "npm run git-daemon & serve ~/.npm & sleep 2s && node ./scripts/ipAndHostnameInfo.js",
+    "distribute-stop": "kill $(ps -f | grep '[s]erve' | awk '{print $3}') && kill $(ps -f | grep '[g]it daemon' | awk '{print $3}')",
     "git-daemon": "git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/",
     "find-processes-to-kill": "ps aux | grep '[n]pm-offline' && ps aux | grep '[g]it daemon'"
   },
@@ -25,6 +25,6 @@
   "devDependencies": {
     "cli-color": "^1.2.0",
     "ip": "^1.1.5",
-    "npm-offline": "0.0.1"
+    "serve": "^6.4.1"
   }
 }
