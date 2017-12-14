@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "echo 'nothing to start yet...'",
-    "distribute": "npm run git-daemon & serve ~/.npm & sleep 2s && node ./scripts/ipAndHostnameInfo.js",
+    "distribute": "./scripts/create_tarball.sh && nodemon ./scripts/ipAndHostnameInfo.js",
     "distribute-stop": "kill $(ps -f | grep '[s]erve' | awk '{print $3}') && kill $(ps -f | grep '[g]it daemon' | awk '{print $3}')",
-    "git-daemon": "git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/",
+    "git-daemon": "git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths --port=5420 .git/",
     "find-processes-to-kill": "ps aux | grep '[n]pm-offline' && ps aux | grep '[g]it daemon'"
   },
   "repository": {
@@ -25,6 +25,10 @@
   "devDependencies": {
     "cli-color": "^1.2.0",
     "ip": "^1.1.5",
-    "serve": "^6.4.1"
+    "nodemon": "^1.12.7",
+    "open": "0.0.5",
+    "pug": "^2.0.0-rc.4",
+    "serve": "^6.4.1",
+    "tcp-port-used": "^0.1.2"
   }
 }
