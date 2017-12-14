@@ -184,5 +184,3 @@ function renderHtml () {
 	});
 
 }
-
-
