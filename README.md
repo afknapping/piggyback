@@ -1,6 +1,11 @@
 # piggyback
 
-- `npm start`: start the app (nothing there yet)
-- `npm run distribute`: start [git daemon](https://gist.github.com/datagrok/5080545) and serve the npm cache (also, a tarball of `node_modules` as fallback). a browser window should open which shows a beautiful how to message:
+### `npm start`
 
-  ![image](https://user-images.githubusercontent.com/170145/34012509-5755e21e-e114-11e7-8ae5-0a7dfc0efe97.png)
+- starts a [git daemon](https://gist.github.com/datagrok/5080545)
+- serves the npm cache (currently not in use because flakey)
+- serves a tarball of `node_modules`
+- starts electron
+- generates info on how to clone and pull for peers
+
+![image](https://user-images.githubusercontent.com/170145/36341637-98dcdd68-13f1-11e8-8920-a58db9f18775.png)
