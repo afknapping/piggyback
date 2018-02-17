@@ -1,5 +1,7 @@
 # piggyback
 
+⚠️ You do not need a second computer to test this, a second terminal will do :) ⚠️
+
 ### `npm start`
 
 - starts a [git daemon](https://gist.github.com/datagrok/5080545)
