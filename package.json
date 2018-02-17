@@ -2,10 +2,10 @@
   "name": "piggyback",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "echo 'nothing to start yet...'",
+    "start": "./node_modules/.bin/electron .",
     "distribute": "./scripts/create_tarball.sh && nodemon ./scripts/ipAndHostnameInfo.js",
     "distribute-stop": "kill $(ps -f | grep '[s]erve' | awk '{print $3}') && kill $(ps -f | grep '[g]it daemon' | awk '{print $3}')",
     "git-daemon": "git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths --port=5420 .git/",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/filtercake/piggyback#readme",
   "devDependencies": {
     "cli-color": "^1.2.0",
+    "electron": "^1.8.2",
     "ip": "^1.1.5",
     "nodemon": "^1.12.7",
     "open": "0.0.5",
