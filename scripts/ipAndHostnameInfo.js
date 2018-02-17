@@ -116,9 +116,9 @@ setTimeout(function() {
 }, 2000);
 
 
-setTimeout(function() {
-open(__dirname+'/../distribution-info.html');
-}, 3000);
+// setTimeout(function() {
+// open(__dirname+'/../distribution-info.html');
+// }, 3000);
 
 
 command_line_instructions_pref_offline = `npm install --cache ${ip.address()}:${npm_cache_port} --prefer-offline`
@@ -130,23 +130,26 @@ command_line_instructions_tar = `tar -xf node_modules.tar.gz`
 function renderHtml () {
 	pugTemplate = `
 .info-container
-	p
+	h3 🚀 the dev servers seem to work 🚀
+	p here is how others can clone piggyback and its dependencies from your machine:
 		pre.
 			git clone git://${ip.address()}/ ${process.cwd().split('/').reverse()[0]}
 			cd ${process.cwd().split('/').reverse()[0]}
-			npm install --cache ${ip.address()}:${npm_cache_port} --offline
-	hr
-	p if that failed, try
-		pre.
-			${command_line_instructions_pref_offline}
-	hr
-	p last resort in case there is zero internet available:
-		pre.
 			${command_line_instructions_clean_node_modules}
 			${command_line_instructions_curl}
 			${command_line_instructions_tar}
-	hr
-	p also helpful to pull updates:
+
+	//- hr
+	//- npm install --cache ${ip.address()}:${npm_cache_port} --offline
+	//- hr
+	//- p if that failed, try
+	//- pre.
+	//-		${command_line_instructions_pref_offline}
+	//- hr
+	//- p last resort in case there is zero internet available:
+	//- 	pre.
+	//- hr
+	p helpful to pull updates:
 	p
 		pre.
 			git remote add ${os.hostname()} git://${ip.address()}/
