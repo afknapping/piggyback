@@ -1,9 +1,9 @@
 const {app, BrowserWindow} = require('electron')
   const path = require('path')
   const url = require('url')
-
-
-  require('electron-reload')(__dirname);
+  require('electron-reload')(__dirname)
+  const locals = {/* ...*/}
+  const pug = require('electron-pug')({pretty: true}, locals)
 
 
   // Keep a global reference of the window object, if you don't, the window will
@@ -21,7 +21,7 @@ const {app, BrowserWindow} = require('electron')
 
     // and load the index.html of the app.
     win.loadURL(url.format({
-      pathname: path.join(__dirname, 'index.html'),
+      pathname: path.join(__dirname, 'index.pug'),
       protocol: 'file:',
       slashes: true
     }))

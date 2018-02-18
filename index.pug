@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title Hello World!
+    link(rel='stylesheet', href='node_modules/semantic-ui-css/semantic.min.css')
+    script(src='node_modules/vue/dist/vue.min.js')
+    script(src='node_modules/semantic-ui-vue/dist/umd/semantic-ui-vue.min.js')
+  body
+    #app
+      sui-container
+        h1 Hello World!
+        p
+          a(href='distribution-info.html') distribution-info
+        p
+          sui-button(primary='') {{message}}
+
+        transition name="fade"
+          sui-message(dismissable v-if="" @dismiss="")
+            p
+              | node
+              script.
+                document.write(process.versions.node)
+              | , Chrome
+              script.
+                document.write(process.versions.chrome)
+              | , Electrom
+              script.
+                document.write(process.versions.electron)
+
+            script.
+              //- export default {
+              //-   name: 'DismissableBlockExample',
+              //-   data() {
+              //-     return { visible: true };
+              //-   },
+              //-   methods: {
+              //-     handleDismiss() {
+              //-       this.visible = false;
+              //-       setTimeout(() => {
+              //-         this.visible = true;
+              //-       }, 2000);
+              //-     },
+              //-   },
+              //- };
+
+
+script(src="frontend.js")
