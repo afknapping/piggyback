@@ -2,7 +2,9 @@ const {app, BrowserWindow} = require('electron')
   const path = require('path')
   const url = require('url')
 
+
   require('electron-reload')(__dirname);
+
 
   // Keep a global reference of the window object, if you don't, the window will
   // be closed automatically when the JavaScript object is garbage collected.
@@ -14,7 +16,7 @@ const {app, BrowserWindow} = require('electron')
 
     // clear chache
     win.webContents.session.clearCache(function(){
-      console.log('yo')
+      console.log('cache cleared')
     });
 
     // and load the index.html of the app.

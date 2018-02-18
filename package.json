@@ -5,13 +5,15 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run distribute & npm run electron",
+    "start": "npm run serve-git-and-modules & npm run electron",
+    "serve-git-and-modules": "npm run clear-distribution-info && nodemon ./scripts/serveGitAndModules.js",
     "electron": "nodemon ./node_modules/.bin/electron .",
-    "distribute": "npm run clear-distribution-info && ./scripts/create_tarball.sh && nodemon ./scripts/ipAndHostnameInfo.js",
-    "clear-distribution-info": "echo 'One second, am preparing the servers to enable p2p development...' > distribution-info.html",
+    "clear-distribution-info": "echo 'One second please, I am preparing p2p dev mode...' > distribution-info.html",
+    "startx": "npm run distribute & npm run electron",
+    "electronx": "nodemon ./node_modules/.bin/electron .",
+    "distributex": "npm run clear-distribution-info && ./scripts/create_tarball.sh && nodemon ./scripts/ipAndHostnameInfo.js",
     "distribute-stop": "kill $(ps -f | grep '[s]erve' | awk '{print $3}') && kill $(ps -f | grep '[g]it daemon' | awk '{print $3}')",
-    "git-daemon": "git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths --port=5420 .git/",
-    "find-processes-to-kill": "ps aux | grep '[n]pm-offline' && ps aux | grep '[g]it daemon'"
+    "git-daemon": "git daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths --port=5420 .git/"
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,6 @@
   },
   "homepage": "https://github.com/filtercake/piggyback#readme",
   "devDependencies": {
-    "cli-color": "^1.2.0",
     "electron": "^1.8.2",
     "ip": "^1.1.5",
     "nodemon": "^1.12.7",
@@ -35,6 +36,7 @@
     "tcp-port-used": "^0.1.2"
   },
   "dependencies": {
-    "electron-reload": "^1.2.2"
+    "electron-reload": "^1.2.2",
+    "es6-template-strings": "^2.0.1"
   }
 }

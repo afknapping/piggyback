@@ -1,3 +1,27 @@
-.info
-	h1 hello world from ${ip.address()} now with pug
-	p built: ${Date()}
+p
+	pre.
+		####################
+		##  P2P DEV MODE  ##
+		####################
+
+		# clone the repo and cd into it
+		git clone git://#{config.ip}/ #{process.cwd().split('/').reverse()[0]}
+		cd #{process.cwd().split('/').reverse()[0]}
+
+		# pull and extract a copy of the node_modules
+		curl http://#{config.ip}:#{config.cwd_port}/node_modules.tar.gz > node_modules.tar.gz
+		tar -xf node_modules.tar.gz
+
+		# run the app
+		npm start
+
+		# helpful to pull updates
+		git remote add #{config.hostname} git://#{config.ip}/
+		git pull #{config.hostname}
+
+		# these should work too, but are currently flakey
+		npm install --cache #{config.ip}:#{config.npm_cache_port} --offline
+		npm install --cache #{config.ip}:#{config.npm_cache_port} --prefer-offline
+
+hr
+p.buildinfo rendered: #{Date()}
