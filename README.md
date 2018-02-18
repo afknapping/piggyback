@@ -10,4 +10,4 @@
 - starts electron
 - generates info on how to clone and pull for peers
 
-![image](https://user-images.githubusercontent.com/170145/36352625-13ac21a0-14bc-11e8-9126-413e2c49f1f1.png)
+![image](https://user-images.githubusercontent.com/170145/36355766-706b856c-14e8-11e8-82ff-290d751d5568.png)
