@@ -79,16 +79,15 @@ module.exports = function ServeGitAndModules () {
 	    // triggerErrorStuff();
 	});
 
-
+	console.log(__dirname)
+	console.log(__dirname+`/..`)
 	const serving_cwd = serve(__dirname+`/..`, {
-	  port: config.cwd_port,
-	  ignore: ['node_modules']
+	  port: config.cwd_port
 	})
 
 	// process.env.npm_package_config_cache
 	const serving_cache = serve(process.env.npm_config_cache, {
-	  port: config.npm_cache_port,
-	  ignore: ['node_modules']
+	  port: config.npm_cache_port
 	})
 
 
