@@ -1,10 +1,17 @@
 const {app, BrowserWindow} = require('electron')
   const path = require('path')
   const url = require('url')
-  require('electron-reload')(__dirname)
+  // require('electron-reload')(__dirname)
   const locals = {/* ...*/}
-  const pug = require('electron-pug')({pretty: true}, locals)
+  // const pug = require('electron-pug')({pretty: true}, locals)
 
+  const ServeGitAndModules = require('./scripts/serveGitAndModules')
+
+  p2pDevModeConfig = ServeGitAndModules()
+
+  // how to get this data to the renderer?
+  // http://electron.rocks/different-ways-to-communicate-between-main-and-renderer-process/ ?
+  console.log(p2pDevModeConfig)
 
   // Keep a global reference of the window object, if you don't, the window will
   // be closed automatically when the JavaScript object is garbage collected.
@@ -19,12 +26,8 @@ const {app, BrowserWindow} = require('electron')
       console.log('cache cleared')
     });
 
-    // and load the index.html of the app.
-    win.loadURL(url.format({
-      pathname: path.join(__dirname, 'index.pug'),
-      protocol: 'file:',
-      slashes: true
-    }))
+    // Specify entry point to default entry point of vue.js
+    win.loadURL('http://localhost:8080');
 
     // Open the DevTools.
     // win.webContents.openDevTools()
