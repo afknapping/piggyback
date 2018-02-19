@@ -6,6 +6,7 @@ import P2pDevModeInfo from '@/components/P2pDevModeInfo'
 import HelloWorld from '@/components/HelloWorld'
 import WebTorrentDemo from '@/components/WebTorrentDemo'
 import TodoExample from '@/components/TodoExample'
+import Tasks from '@/components/Tasks'
 
 export default new Router({
   routes: [
@@ -24,6 +25,10 @@ export default new Router({
     {
       path: '/TodoExample',
       component: TodoExample
+    },
+    {
+      path: '/Tasks',
+      component: Tasks
     },
     {
       path: '/WebTorrentDemo',

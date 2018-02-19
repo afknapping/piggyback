@@ -8,9 +8,40 @@ Vue.use(Vuex);
 import createPersistedState from 'vuex-persistedstate'
 const store = new Vuex.Store({
   state: {
-    todos: []
+    todos: [
+    ],
+    tasks: [
+      { 
+        action: "do me",
+        is_done: false,
+        is_deleted: false,
+      },
+      { 
+        action: "do me too",
+        is_done: false,
+        is_deleted: false,
+      }
+
+    ]
   },
   actions: {
+    ADD_TASK: function ({ commit }, new_task) {
+      var set_new = {
+        action: new_task,
+        is_done: false,
+        is_deleted: false,
+        estimated_units: 0,
+        tracked_units: 0,
+        ticket_url: null,
+        calender_entry_key: null,
+        tags: []
+      }
+      commit("ADD_TASK_MUTATION", set_new)
+    },
+    MARK_TASK_AS_DONE: function ({ commit }, task) {
+      commit("MARK_TASK_AS_DONE_MUTATION", todo)
+    },
+
     ADD_TODO: function({ commit }, new_todo) {
       var set_new = {
         todo: new_todo,
@@ -44,6 +75,13 @@ const store = new Vuex.Store({
     }
   },
   getters: {
+    all_tasks: state => {
+      var filtered = state.tasks.filter( function (el) {
+        return el.is_deleted === false;
+      });
+      return filtered;
+    },
+
     not_done: state => {
       var filtered = state.todos.filter(function(el) {
         return el.status === false && el.deleted === false;

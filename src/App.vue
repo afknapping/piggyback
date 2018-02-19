@@ -7,6 +7,8 @@
       sui-menu-item Files
       sui-menu-item Whiteboard
       sui-menu-item
+        router-link(to="/Tasks") Tasks
+      sui-menu-item
         router-link(to="/TodoExample") TodoExample
       sui-menu-item
         router-link(to="/WebTorrentDemo") WebTorrentDemo
