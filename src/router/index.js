@@ -10,17 +10,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
       component: HelloWorld
     },
     {
       path: '/radar',
-      name: 'Radar',
       component: Radar
     },
     {
       path: '/P2pDevModeInfo',
-      name: 'P2pDevModeInfo',
       component: P2pDevModeInfo
     }
   ]
