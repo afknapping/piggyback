@@ -1,5 +1,5 @@
 <template lang='pug'>
-  sui-container#radar
+  sui-container#radar(textAlign="left")
     h1 Todo example for learning vuex
     p from
       code
@@ -7,6 +7,7 @@
 
     Todos
     Dones
+    Deleted
 </template>
 
 <script>

@@ -10,7 +10,8 @@
           <li class="ui-state-default" v-for="todo in not_done_todos">
             <div class="checkbox">
               <label>
-                                    <input type="checkbox" @click="done_todo(todo.todo)"  :value="todo.todo" :checked="todo.status" />{{todo.todo}}</label>
+                  <input type="checkbox" @click="done_todo(todo.todo)"  :value="todo.todo" :checked="todo.status" />{{todo.todo}}</label>
+                  <input type="button" @click="delete_todo(todo.todo)"  value="delete" :checked="todo.status" /></input>
             </div>
           </li>
         </ul>
@@ -22,7 +23,7 @@
 
     <script>
     export default {
-      name: 'Hello',
+      name: 'Todos',
       data () {
         return {
           holder: ''
@@ -35,6 +36,9 @@
         },
         done_todo: function(todo){
           this.$store.dispatch('COMPLETE_TODO', todo);
+        },
+        delete_todo: function(todo){
+          this.$store.dispatch('DELETE_TODO', todo);
         }
       },
       computed: {
