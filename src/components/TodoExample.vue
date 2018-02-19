@@ -2,8 +2,8 @@
   sui-container#radar
     h1 Todo example for learning vuex
     p from
-      a(href="https://blog.pusher.com/getting-started-vuex-state-management-vuejs/")
-        code blog.pusher.com/getting-started-vuex-state-management-vuejs/
+      code
+        | &nbsp;https://blog.pusher.com/getting-started-vuex-state-management-vuejs/
 
     hello
 </template>
