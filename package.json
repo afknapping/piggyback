@@ -98,6 +98,7 @@
     "pug": "^2.0.0-rc.4",
     "serve": "^6.4.1",
     "tcp-port-used": "^0.1.2",
+    "vue-magnet": "^1.1.0",
     "webtorrent": "^0.98.21"
   },
   "engines": {
