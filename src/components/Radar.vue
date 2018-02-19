@@ -1,6 +1,7 @@
 <template lang='pug'>
-  div
+  sui-container#radar
     h1 hello radar
+    hello
 </template>
 
 <script>
@@ -9,6 +10,9 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  components: {
   }
 }
+
 </script>
