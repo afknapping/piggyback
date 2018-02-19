@@ -1,15 +1,12 @@
-<template>
-  <div class="done">
-     <div class="todolist">
-       <h1>Deleted</h1>
-          <ul id="deleted-items" class="list-unstyled" v-if="deleted_todos">
-            <li v-for="todo in deleted_todos">{{todo.todo}}
-              <input type="button" @click="restore_todo(todo.todo)"  value="restore"/></input>
-            </li>
+<template lang="pug">
+  .done
+    .todolist
+      h1 Deleted
+      ul#deleted-items.list-unstyled(v-if="deleted_todos")
+        li(v-for="todo in deleted_todos")
+          | {{todo.todo}} 
+          input(type="button" @click="restore_todo(todo.todo)" value="restore")
 
-          </ul>
-      </div>
-  </div>
 </template>
 <script>
 export default {
