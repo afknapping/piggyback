@@ -1,6 +1,6 @@
 <template lang="pug">
   #app
-    sui-menu(:widths="3")
+    sui-menu.dings(:widths="3")
       sui-menu-item
         router-link(to="/radar") Radar
       sui-menu-item Chat
@@ -13,7 +13,7 @@
       sui-menu-item
         router-link(to="/P2pDevModeInfo") p2p dev mode info
 
-    router-view/
+    router-view.viewport/
 
 </template>
 
@@ -43,5 +43,15 @@ export default {
   text-align: center
   color: #2c3e50
   // margin-top: 60px
+
+.dings
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 100
+.viewport
+  position: relative
+  top: 46px
 
 </style>
