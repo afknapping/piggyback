@@ -1,7 +1,6 @@
 <template lang='pug'>
   sui-container#radar
     h1 hello radar
-    hello
 </template>
 
 <script>
