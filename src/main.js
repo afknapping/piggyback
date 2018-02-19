@@ -9,10 +9,15 @@ Vue.use(Vuex)
 import App from './App'
 import store from './store'
 import router from './router'
+import VueMagnet from 'vue-magnet'
+Vue.use(VueMagnet)
 import SuiVue from 'semantic-ui-vue'
 Vue.use(SuiVue)
 import 'semantic-ui-css/semantic.min.css'
 import components from '@/components/customElementComponents'
+
+var WebTorrent = require('webtorrent')
+// var WebTorrent = require('webtorrent')
 
 Vue.config.productionTip = false
 
@@ -24,3 +29,5 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+// var client = new WebTorrent()

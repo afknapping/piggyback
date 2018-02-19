@@ -9,6 +9,8 @@
       sui-menu-item
         router-link(to="/TodoExample") TodoExample
       sui-menu-item
+        router-link(to="/WebTorrentDemo") WebTorrentDemo
+      sui-menu-item
         router-link(to="/P2pDevModeInfo") p2p dev mode info
 
     router-view/
