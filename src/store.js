@@ -5,6 +5,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 Vue.use(Vuex);
+import createPersistedState from 'vuex-persistedstate'
 const store = new Vuex.Store({
   state: {
     todos: []
@@ -42,7 +43,8 @@ const store = new Vuex.Store({
       });
       return filtered;
     }
-  }
+  },
+  plugins: [createPersistedState()]
 });
 
 export default store;
