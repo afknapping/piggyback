@@ -5,7 +5,8 @@
       code
         | &nbsp;https://blog.pusher.com/getting-started-vuex-state-management-vuejs/
 
-    hello
+    Todos
+    Dones
 </template>
 
 <script>
