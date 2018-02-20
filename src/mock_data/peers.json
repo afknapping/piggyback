@@ -1,0 +1,17 @@
+[
+{
+  "hostname": "Markus Macbook",
+  "ip": "123.456.789.012",
+  "avatar": "markus.jpg"
+},
+{
+  "hostname": "Rocko",
+  "ip": "123.456.789.012",
+  "avatar": "rocko.jpg"
+},
+{
+  "hostname": "Jonas Macbook",
+  "ip": "123.456.789.012",
+  "avatar": "jonas.jpg"
+}
+]
