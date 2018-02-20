@@ -6,7 +6,7 @@
 
   sui-input.form-control.add-todo(type="text" v-model="holder" placeholder="Add todo") 
   button#checkAll(:disabled="holder==''" @click="add_todo") Add Todo
-  sui-button(size="large" @click="add_todo") ☹️ sui buttons break the event ☹
+  sui-button#checkAll(:disabled="holder==''" @click="add_todo") ☹️ sui buttons break the event ☹
 
   ul#sortable.list-unstyled(v-if="not_done_todos")
     li.ui-state-default(v-for="todo in not_done_todos")
