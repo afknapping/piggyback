@@ -101,7 +101,7 @@
     "vue-magnet": "^1.1.0",
     "vuex": "^3.0.1",
     "vuex-persistedstate": "^2.4.2",
-    "webtorrent": "^0.98.21"
+    "webtorrent": "^0.107.6"
   },
   "engines": {
     "node": ">= 6.0.0",
